@@ -1,0 +1,16 @@
+#pragma code_page(65001)
+#include <windows.h>
+#include "webp_output2.h"
+
+CONFIG DIALOG 0, 0, 220, 90
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "WebP Output2 設定"
+FONT 9, "MS UI Gothic"
+BEGIN
+    LTEXT     "圧縮率 (0=最速 / 9=最高圧縮、ロスレスは維持)",-1,7,7,206,10
+    COMBOBOX  IDC_COMBO_LEVEL,7,18,90,100,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT     "繰り返し回数 (0=無限ループ)",-1,7,40,206,10
+    EDITTEXT  IDC_EDIT_LOOP,7,51,90,12,ES_AUTOHSCROLL | ES_NUMBER
+    DEFPUSHBUTTON "OK",IDOK,120,60,40,14
+    PUSHBUTTON    "キャンセル",IDCANCEL,165,60,48,14
+END
